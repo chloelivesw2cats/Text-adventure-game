@@ -1,13 +1,8 @@
 public class TheHero {
-    private int HP = 50;
-    private int Stamina = 10;
-    private int AttackPower = 5;
-
-    public TheHero(int HP, int stamina, int attackPower) {
-        this.HP = HP;
-        this.Stamina = stamina;
-        this.AttackPower = attackPower;
-    }
+    private int HP;
+    private int Stamina;
+    private int AttackPower;
+    private String name;
 
     public int getHP() {
         return HP;
@@ -31,6 +26,18 @@ public class TheHero {
 
     public void setAttackPower(int attackPower) {
         AttackPower = attackPower;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isAlive(){
+        return HP > 0;
     }
     public void heal(int x){
         HP += x;
