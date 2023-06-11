@@ -4,24 +4,22 @@ import java.util.Scanner;
 public class GameModel {
     private int count = 0;
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
     public void startGame() {
-        boolean TheBossIsAlive = true;
-        while (TheBossIsAlive) {
+        System.out.println("Ho there traveler, first can you tell me your name?");
+            TheHero player = new TheHero();
+                player.setHP(50);
+                player.setName(askForInput());
+                player.setAttackPower(5);
+                player.setStamina(10);
+            TheBoss boss = new TheBoss();
+        while (boss.isAlive() && player.isAlive()) {
             if (count == 0) {
-                System.out.println("Ho there traveler! I see another one has came here to attempt this treacherous quest");
+                System.out.println("Hi "+ player.getName() + "! I see another one has came here to attempt this treacherous quest");
                 //add script later, this is for the introduction.
                 System.out.println("First, let's take a look at your current stats:");
                 System.out.println("Your starting HP is 50, finding healing stone in Peaceful encounter will help restore your health");
                 System.out.println("Your starting Stamina is 10, this is crucial if you want to continue fight off enemies, you can rest to restore your Stamina");
-                System.out.println("Your base attack power is 1, fighting monster and joining training session will help you improve your skill");
+                System.out.println("Your base attack power is 5, fighting monster and joining training session will help you improve your skill");
                 count++;
             }
             int rand = (int) Math.floor(Math.random() * (10 - 1 + 1) + 1);
