@@ -11,7 +11,9 @@ public class TheBoss {
         public int getDamage() {
             return Damage;
         }
-
+        public void setHP(int HP) {
+            this.HP = HP;
+        }
 
     }
 
